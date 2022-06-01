@@ -5,6 +5,15 @@ next: /react-native/docs/usage
 previous: /react-native/docs/installation
 ---
 
+## 6.0.0-0
+- **[iOS]: BREAKING CHANGE** : Notifee now handles response events for remote notifications on iOS:
+  - PRESSED
+  - ACTION_PRESSED
+  - DISMISSED
+This allows quick actions from remote notifications to be supported without the need of a NSE [[Learn More]](https://notifee.app/react-native/docs/ios/remote-notification-support)
+
+  **`onNotificationOpenedApp` and `getInitialNotification` from `RNFB Messaging` will no longer trigger as notifee will handle the event. Should not require any code changes to these `RNFB` event handlers, as events on Android will continue to work as normal**
+
 ## 5.4.1
 - **[Android]**: Fixes an issue when creating a one-time trigger notifications with AlarmManager (Fixes [#445](https://github.com/invertase/notifee/issues/445)).
 
@@ -72,7 +81,7 @@ To learn more, see Permissions documentation for [iOS](https://notifee.app/react
 - **[iOS]**: Fixes an issue that was introduced in the previous patch when calling `setBadgeCount` with 0 (Fixes [#212](https://github.com/invertase/notifee/issues/212))
 
 ## 3.0.3
-- **[iOS]**: Fix iOS API availability guards, and all compile warnings (Fixes [#204](https://github.com/invertase/notifee/issues/204)) 
+- **[iOS]**: Fix iOS API availability guards, and all compile warnings (Fixes [#204](https://github.com/invertase/notifee/issues/204))
 
 ## 3.0.2
 - **[Android]**: Include support for expo managed projects [[Learn More]](/react-native/docs/installation#miscellaneous)]
